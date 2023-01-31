@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --border-radius-sm: 5px; 
+}
+
+*, *::after, *::before {
+    padding: 0px; 
+    margin: 0px; 
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+
+body {
+    background: linear-gradient(60deg, white, rgb(240, 237, 237)) no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.general-btn {
+    padding: .5rem 1rem;
+    min-width: 150px;
+    background-color: rgb(234, 234, 234);
+    border: solid 2px white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: var(--border-radius-sm);
+    transition: all .5s ease-in-out;
+    font-weight: bold; 
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    &:active {
+        transition: all .3s;
+        transform: translateY(5px);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+$gaps: 05, 075, 1 ,2 ,3 ,4 ,5 ,6 ,7 ,8;
+
+@each $gap in $gaps {
+  .f-gap-#{$gap} {
+    gap: #{$gap}rem; 
+  }
+}
