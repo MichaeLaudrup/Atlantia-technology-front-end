@@ -11,6 +11,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-shared-front-atlantia": [
+        "dist/ngx-shared-front-atlantia"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -19,11 +24,6 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "paths": {
-      "common-front-end/*": [
-        "node_modules/ngx-shared-from-atlantia/*"
-      ]
-    },
     "lib": [
       "ES2022",
       "dom"

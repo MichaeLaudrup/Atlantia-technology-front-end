@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-shared-front-atlantia": {
+      "projectType": "library",
+      "root": "projects/ngx-shared-front-atlantia",
+      "sourceRoot": "projects/ngx-shared-front-atlantia/src",
+      "prefix": "ngx-atlant",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-shared-front-atlantia/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-shared-front-atlantia/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-shared-front-atlantia/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-shared-front-atlantia/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "b208b237-5ab9-454f-98ee-9c9af27990ed"
+  }
+}

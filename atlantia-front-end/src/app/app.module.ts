@@ -3,14 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FrontAtlantiaModule } from 'common-front-end';
+import { UiComponentsModule } from 'ngx-shared-front-atlantia';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UiComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

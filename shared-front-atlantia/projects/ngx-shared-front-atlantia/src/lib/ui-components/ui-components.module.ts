@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DinamicNavBarComponent } from './dinamic-nav-bar.component';
+import { DinamicNavBarComponent } from './dinamic-nav-bar/dinamic-nav-bar.component';
 
 
 
@@ -10,6 +10,9 @@ import { DinamicNavBarComponent } from './dinamic-nav-bar.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    DinamicNavBarComponent
   ]
 })
-export class DinamicNavBarModule { }
+export class UiComponentsModule { }
