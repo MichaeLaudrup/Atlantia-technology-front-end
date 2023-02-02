@@ -1,0 +1,15 @@
+.navegation {
+
+}
+
+.list-items {
+    display: flex;
+    flex-direction: column;
+    .nav-item {
+        height: var(--nav-bar-length);
+        display: flex;
+        align-items: center;
+        padding-left: .75rem;
+        font-size: 1.20rem;
+    }
+}

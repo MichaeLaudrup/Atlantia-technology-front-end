@@ -1,0 +1,7 @@
+<nav class="navegation">
+    <ul class="list-items">
+        <li class="nav-item" *ngFor="let navItem of navegationItems">
+            <a [href]="navItem.link">{{ navItem.name }}</a>
+        </li>
+    </ul>
+</nav>

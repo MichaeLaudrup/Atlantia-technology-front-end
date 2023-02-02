@@ -1,0 +1,31 @@
+@import 'material-symbols';
+@import './colors/atlantia-colors.scss'; 
+:root {
+    //GENERAL
+    --normal-animation-duration: .7s; 
+
+    --regular-transition: all var(--normal-animation-duration) ease-in-out; 
+
+
+    //NAVEGATION-BAR
+        //NAVIGATION-BAR-MEASURES
+        --nav-bar-length: 50px;
+        --nav-bar-content-length: 300px;
+
+        //NAVIGATION-BAR-COLORS
+        --nav-bar-primary-color: var(--color-9) ;  
+        --nav-bar-logo-bg: var(--color-2);
+        --nav-bar-icons-color:var(--nav-bar-logo-bg); 
+        --nav-bar-icons-hover-color: var(--nav-bar-primary-color);
+        --nav-bar-line-bg: var(--color-9); 
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
