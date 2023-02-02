@@ -19,6 +19,11 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "paths": {
+      "common-front-end/*": [
+        "node_modules/common-front-end/*"
+      ]
+    },
     "lib": [
       "ES2022",
       "dom"
