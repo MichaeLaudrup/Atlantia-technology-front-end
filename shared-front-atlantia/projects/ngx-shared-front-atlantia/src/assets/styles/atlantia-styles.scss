@@ -6,18 +6,21 @@
 
     --regular-transition: all var(--normal-animation-duration) ease-in-out; 
 
-
+    --font-color: black; 
+    --font-color-inverse: white; 
     //NAVEGATION-BAR
         //NAVIGATION-BAR-MEASURES
         --nav-bar-length: 50px;
         --nav-bar-content-length: 300px;
+        --nav-break-width-to-phone: 550px; 
 
         //NAVIGATION-BAR-COLORS
-        --nav-bar-primary-color: var(--color-9) ;  
-        --nav-bar-logo-bg: var(--color-2);
-        --nav-bar-icons-color:var(--nav-bar-logo-bg); 
+        --nav-bar-primary-color: #edede9 ;  
+        --nav-bar-logo-bg: var(--color-4);
+        --nav-bar-logo-color: #edede9; 
+        --nav-bar-icons-color:var(--color-5); 
         --nav-bar-icons-hover-color: var(--nav-bar-primary-color);
-        --nav-bar-line-bg: var(--color-9); 
+        --nav-bar-line-bg:#edede9; 
 }
 
 ul {

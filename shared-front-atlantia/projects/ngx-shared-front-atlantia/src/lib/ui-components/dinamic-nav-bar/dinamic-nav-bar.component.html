@@ -1,13 +1,18 @@
 <div class="nav-line">
     <div class="logo-item" (click)="toggleExpanded()">
         <a href="#">
-            <img src="assets/atlantia-logo.png" alt="">
+            <img [src]="srcPathLogo" alt="">
         </a>
     </div>
     <nav>
         <ul class="nav-items-list" >
-            <li class="nav-items-list__item" *ngFor="let item of navItems">
-                <span class="material-symbols-outlined nav-icon">{{ item.googleMaterialName }}</span>
+            <li class="nav-items-list__item" *ngFor="let item of navItems" [ngClass]="{'only-phone-mod':item.isLogo}">
+                <span *ngIf="!item.isLogo"class="material-symbols-outlined nav-icon" [ngClass]="{'only-phone-mod': item.isEmpty || item.isLogo}">{{ item.googleMaterialName }}</span>
+                <div *ngIf="item.isLogo" (click)="toggleExpanded()">
+                    <a href="#">
+                        <img [src]="srcPathLogo" alt="" style="width: 100%; padding: 0.25rem">
+                    </a>
+                </div>
             </li>
         </ul>
     </nav>

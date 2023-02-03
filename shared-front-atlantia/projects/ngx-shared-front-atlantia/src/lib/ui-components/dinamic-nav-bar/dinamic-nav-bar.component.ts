@@ -1,22 +1,37 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { navBarLink } from '../../data-models';
 
 @Component({
   selector: 'ngx-atlant-dinamic-nav-bar',
   templateUrl: './dinamic-nav-bar.component.html',
   styleUrls: ['./dinamic-nav-bar.component.scss']
 })
-export class DinamicNavBarComponent {
+export class DinamicNavBarComponent implements OnInit {
+
+  ngOnInit(): void {
+    const navItemsLength = this.navItems.length;
+    const logoPosition = Math.ceil(navItemsLength / 2);
+    
+    console.log(logoPosition)
+    this.navItems.splice(logoPosition, 0, {
+      name: "",
+      link: "",
+      isLogo: true
+    }); 
+    if ((navItemsLength % 2) > 0) {
+      this.navItems.push({
+        name: "",
+        link: "",
+        isEmpty: true,
+      })
+    };  
+
+    console.log(this.navItems); 
+  }
+
   @Input() navContentExpanded = false;
-  @Input() navItems = [
-    {
-      googleMaterialName: 'home',
-      name: "Página de inicio",
-      link: ""
-    },{
-      googleMaterialName: 'self_improvement',
-      name:"Sobre el Autor", 
-      link:""
-    }]; 
+  @Input() navItems: navBarLink[] = []; 
+  @Input() srcPathLogo: string = "assets/atlantia-logo.png"; 
 
 
   toggleExpanded() {

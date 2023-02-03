@@ -11,5 +11,8 @@
         align-items: center;
         padding-left: .75rem;
         font-size: 1.20rem;
+        a:link, a, a:visited {
+            color: var(--font-color); 
+        }
     }
 }

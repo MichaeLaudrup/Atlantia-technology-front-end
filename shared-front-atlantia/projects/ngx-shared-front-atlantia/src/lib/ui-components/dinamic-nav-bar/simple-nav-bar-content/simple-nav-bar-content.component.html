@@ -1,7 +1,10 @@
 <nav class="navegation">
     <ul class="list-items">
-        <li class="nav-item" *ngFor="let navItem of navegationItems">
-            <a [href]="navItem.link">{{ navItem.name }}</a>
-        </li>
+        <ng-container *ngFor="let navItem of navegationItems">
+            <li class="nav-item" *ngIf="!navItem.isLogo && !navItem.isEmpty">
+                <a [href]="navItem.link">{{ navItem.name }}</a>
+            </li>
+        </ng-container>
+        
     </ul>
 </nav>

@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { navBarLink } from '../../../data-models';
+
 
 @Component({
   selector: 'ngx-atlant-simple-nav-bar-content',
@@ -6,10 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./simple-nav-bar-content.component.scss']
 })
 export class SimpleNavBarContentComponent {
-  @Input() navegationItems = [
-    {
-      name: 'x',
-      link: 'y'
-    }
-  ]
+  @Input() navegationItems: navBarLink[] = []; 
 }
