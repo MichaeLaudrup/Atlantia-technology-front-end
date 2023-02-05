@@ -16,11 +16,11 @@
 
         //NAVIGATION-BAR-COLORS
         --nav-bar-primary-color: #edede9 ;  
-        --nav-bar-logo-bg: var(--color-4);
+        --nav-bar-logo-bg: var(--color-3);
         --nav-bar-logo-color: #edede9; 
-        --nav-bar-icons-color:var(--color-5); 
+        --nav-bar-icons-color:var(--color-3); 
         --nav-bar-icons-hover-color: var(--nav-bar-primary-color);
-        --nav-bar-line-bg:#edede9; 
+        --nav-bar-line-bg: var(--nav-bar-primary-color); 
 }
 
 ul {

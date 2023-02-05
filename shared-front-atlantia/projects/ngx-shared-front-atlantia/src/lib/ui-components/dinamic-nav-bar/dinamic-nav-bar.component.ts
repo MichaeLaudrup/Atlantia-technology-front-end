@@ -12,7 +12,6 @@ export class DinamicNavBarComponent implements OnInit {
     const navItemsLength = this.navItems.length;
     const logoPosition = Math.ceil(navItemsLength / 2);
     
-    console.log(logoPosition)
     this.navItems.splice(logoPosition, 0, {
       name: "",
       link: "",
