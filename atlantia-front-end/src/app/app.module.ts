@@ -2,20 +2,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { UiComponentsModule } from 'ngx-shared-front-atlantia';
+import { AtlantiaViewsModule } from './views/atlantia-views.module';
+import { AtlantiaMainViewComponent } from './views/atlantia-main-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UiComponentsModule
+    AtlantiaViewsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AtlantiaMainViewComponent],
   exports: [
   ]
 })
