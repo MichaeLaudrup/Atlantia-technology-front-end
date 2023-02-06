@@ -1,15 +1,20 @@
 <div class="nav-line">
-    <div class="logo-item" (click)="toggleExpanded()">
-        <a href="#">
+    <div class="logo-item">
+        <a [routerLink]="linkOnClickLogo">
             <img [src]="srcPathLogo" alt="">
         </a>
+    </div>
+    <div class="toggle-icon" (click)="toggleExpanded()">
+        <ngx-atlant-dinamic-toggle-menu-icon defaultColor="#5390D9" [menuExpanded]="navContentExpanded"></ngx-atlant-dinamic-toggle-menu-icon>
     </div>
     <nav>
         <ul class="nav-items-list" >
             <li class="nav-items-list__item" *ngFor="let item of navItems" [ngClass]="{'only-phone-mod':item.isLogo}">
-                <span *ngIf="!item.isLogo"class="material-symbols-outlined nav-icon" [ngClass]="{'only-phone-mod': item.isEmpty || item.isLogo}">{{ item.googleMaterialName }}</span>
-                <div *ngIf="item.isLogo" (click)="toggleExpanded()">
-                    <a href="#">
+                <a [routerLink]="item.link">
+                    <span *ngIf="!item.isLogo"class="material-symbols-outlined nav-icon" [ngClass]="{'only-phone-mod': item.isEmpty || item.isLogo}">{{ item.googleMaterialName }}</span>
+                </a>
+                <div *ngIf="item.isLogo">
+                    <a [routerLink]="item.link">
                         <img [src]="srcPathLogo" alt="" style="width: 100%; padding: 0.25rem">
                     </a>
                 </div>
@@ -17,7 +22,7 @@
         </ul>
     </nav>
 </div>
-<nav class="nav-content" [ngClass]="{'expanded': navContentExpanded}">
+<nav class="nav-content" [ngClass]="{'expanded': navContentExpanded }">
     <div class="logo-name">TLANTIA</div>
     <ngx-atlant-simple-nav-bar-content [navegationItems]="navItems"></ngx-atlant-simple-nav-bar-content>
 </nav>

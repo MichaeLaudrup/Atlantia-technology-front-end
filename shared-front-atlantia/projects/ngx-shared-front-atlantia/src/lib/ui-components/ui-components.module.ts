@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DinamicNavBarComponent } from './dinamic-nav-bar/dinamic-nav-bar.component';
 import { SimpleNavBarContentComponent } from './dinamic-nav-bar/simple-nav-bar-content/simple-nav-bar-content.component';
 import { DinamicWebPagesComponent } from './dinamic-web-pages/dinamic-web-pages.component';
-
-
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SimpleComponentsModule } from './simple-components';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,10 @@ import { DinamicWebPagesComponent } from './dinamic-web-pages/dinamic-web-pages.
     DinamicWebPagesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    SimpleComponentsModule
   ],
   exports: [
     DinamicNavBarComponent,

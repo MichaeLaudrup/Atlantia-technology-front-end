@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { navBarLink } from '../../data-models';
 
 @Component({
@@ -7,8 +7,13 @@ import { navBarLink } from '../../data-models';
   styleUrls: ['./dinamic-nav-bar.component.scss']
 })
 export class DinamicNavBarComponent implements OnInit {
-
+  @Input() navContentExpanded = false;
+  @Input() navItems: navBarLink[] = []; 
+  @Input() srcPathLogo: string = "assets/atlantia-logo.png";
+  @Input() linkOnClickLogo: string = "/home";
+   
   ngOnInit(): void {
+    this.navContentExpanded = false; 
     const navItemsLength = this.navItems.length;
     const logoPosition = Math.ceil(navItemsLength / 2);
     
@@ -25,16 +30,9 @@ export class DinamicNavBarComponent implements OnInit {
       })
     };  
 
-    console.log(this.navItems); 
   }
-
-  @Input() navContentExpanded = false;
-  @Input() navItems: navBarLink[] = []; 
-  @Input() srcPathLogo: string = "assets/atlantia-logo.png"; 
-
 
   toggleExpanded() {
     this.navContentExpanded = !this.navContentExpanded;
-    console.log(this.navContentExpanded); 
   }
 }

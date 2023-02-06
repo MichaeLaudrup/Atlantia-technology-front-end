@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { navBarLink } from 'ngx-shared-front-atlantia';
 
 @Component({
@@ -7,15 +8,16 @@ import { navBarLink } from 'ngx-shared-front-atlantia';
   styleUrls: ['./atlantia-main-view.component.scss']
 })
 export class AtlantiaMainViewComponent {
+  currentRoute = -1; 
   navItems: navBarLink[] = [
     {
       googleMaterialName: 'home',
       name: "Inicio",
-      link: ""
+      link: "/home"
     },{
       googleMaterialName: 'engineering',
       name:"Sobre el Autor", 
-      link:""
+      link:"/about-me"
     },
     {
       googleMaterialName: 'school',
@@ -29,4 +31,8 @@ export class AtlantiaMainViewComponent {
     },
   
   ]; 
+
+  processOutlet(event: any, outlet: RouterOutlet) {
+    this.currentRoute = outlet && outlet.activatedRouteData && outlet.activatedRouteData['order']; 
+  }
 }

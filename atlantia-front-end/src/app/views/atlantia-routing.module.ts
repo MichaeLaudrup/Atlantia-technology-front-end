@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AtlantiaHomeViewComponent } from './atlantia-home-view/atlantia-home-view.component';
+import { AuthorViewComponent } from './author-view/author-view.component';
 
 const routes: Routes = [
+    {
+        path: 'home', component:AtlantiaHomeViewComponent, data : { order: 0},
+    },
+    {
+        path: 'about-me', component: AuthorViewComponent, data: { order: 1 }
+    }
   /* {
     path: '', component: NutriGlobalLayoutComponent,
     canActivate: [userLogedGuard],
@@ -17,8 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AtlantiaRoutingModule { }

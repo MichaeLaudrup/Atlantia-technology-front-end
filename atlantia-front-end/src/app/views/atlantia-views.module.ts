@@ -8,6 +8,7 @@ import { AtlantiaAlejandriaViewComponent } from './atlantia-alejandria-view/atla
 import { AtlantiaRoutingModule } from './atlantia-routing.module';
 import { AtlantiaMainViewComponent } from './atlantia-main-view.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthorViewComponent } from './author-view/author-view.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BrowserModule } from '@angular/platform-browser';
     AtlantiaHomeViewComponent,
     AtlantiaHermesViewComponent,
     AtlantiaAlejandriaViewComponent,
-    AtlantiaMainViewComponent
+    AtlantiaMainViewComponent,
+    AuthorViewComponent
   ],
   imports: [
     CommonModule,

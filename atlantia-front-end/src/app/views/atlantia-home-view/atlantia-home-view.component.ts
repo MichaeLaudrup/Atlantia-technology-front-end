@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-atlantia-home-view',
   templateUrl: './atlantia-home-view.component.html',
   styleUrls: ['./atlantia-home-view.component.scss']
 })
-export class AtlantiaHomeViewComponent {
+export class AtlantiaHomeViewComponent{
 
 }

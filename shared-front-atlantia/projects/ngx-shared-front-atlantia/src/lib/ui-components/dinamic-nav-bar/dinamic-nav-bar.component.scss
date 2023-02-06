@@ -13,10 +13,13 @@
     z-index: 2;
 }
 
+.logo-item, .nav-items-list__item, .toggle-icon {
+  width: var(--nav-bar-length);
+  height: var(--nav-bar-length);
+}
+
 .logo-item {
     background: var(--nav-bar-logo-bg); 
-    width: var(--nav-bar-length);
-    height: var(--nav-bar-length);
     padding: .25rem; 
     img {
         width: 100%;
@@ -26,10 +29,8 @@
 .nav-items-list {
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   &__item {
-      width: var(--nav-bar-length);
-      height: var(--nav-bar-length);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,15 +59,16 @@
     background-color: rgb(237, 237, 237);
     position: fixed;
     top: 0; 
-    left: 0; 
+    
     bottom: 0;
     z-index: 1;
+    left: calc(-1 * var(--nav-bar-content-length));
     margin-left: var(--nav-bar-length);
     width: var(--nav-bar-content-length);
     transition: left var(--normal-animation-duration) ease-in-out;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     &.expanded {
-      left: calc(-1 * var(--nav-bar-content-length)); 
+      left: 0; 
     }
 }
 
@@ -114,10 +116,11 @@
   .nav-content { 
     width: 100%;
     margin-left: 0;
+    left: 0;
+    top: 100%; 
     transition: top var(--normal-animation-duration) ease-in-out;
     &.expanded {
-      left: 0;
-      top: 100%;  
+      top: 0;
     }
   }
 }
