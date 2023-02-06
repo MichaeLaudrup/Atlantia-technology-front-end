@@ -13,8 +13,17 @@
         align-items: center;
         padding-left: .75rem;
         font-size: 1.20rem;
+        transition: all var(--normal-animation-duration) ease-in-out;
         a:link, a, a:visited {
-            color: var(--font-color); 
+            color: var(--font-color);
+            transition: all var(--normal-animation-duration) ease-in-out;
+        }
+
+        &:hover, &.hovered {
+            background-color: var(--nav-bar-logo-bg);
+            a {
+                color: var(--nav-bar-icons-hover-color); 
+            }
         }
     }
 }

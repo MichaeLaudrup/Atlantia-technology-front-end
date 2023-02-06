@@ -37,8 +37,11 @@
       font-size: 2rem;
       cursor: pointer;
       transition: all var(--normal-animation-duration) ease-in-out;
-      &:hover {
+      &:hover, &.hovered {
           background-color: var(--nav-bar-logo-bg);
+          .nav-icon {
+            color: var(--nav-bar-icons-hover-color);
+          }
       }
   }
 
@@ -46,12 +49,6 @@
       font-size: 2rem;
       color: var(--nav-bar-icons-color);
       transition: var(--regular-transition);
-  }
-
-  &__item:hover {
-    .nav-icon {
-      color: var(--nav-bar-icons-hover-color);
-    }
   }
 }
 

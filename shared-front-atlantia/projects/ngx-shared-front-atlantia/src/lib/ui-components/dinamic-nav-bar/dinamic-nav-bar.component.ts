@@ -11,7 +11,8 @@ export class DinamicNavBarComponent implements OnInit {
   @Input() navItems: navBarLink[] = []; 
   @Input() srcPathLogo: string = "assets/atlantia-logo.png";
   @Input() linkOnClickLogo: string = "/home";
-   
+  currentHovered = -1; 
+
   ngOnInit(): void {
     this.navContentExpanded = false; 
     const navItemsLength = this.navItems.length;
@@ -34,5 +35,11 @@ export class DinamicNavBarComponent implements OnInit {
 
   toggleExpanded() {
     this.navContentExpanded = !this.navContentExpanded;
+  }
+
+  updateItemHovered(currentHovered:number) {
+    debugger;
+    console.log(currentHovered)
+    this.currentHovered = currentHovered; 
   }
 }

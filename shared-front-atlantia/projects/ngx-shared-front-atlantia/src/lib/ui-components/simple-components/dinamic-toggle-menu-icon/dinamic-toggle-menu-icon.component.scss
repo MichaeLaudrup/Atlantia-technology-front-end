@@ -20,7 +20,7 @@ button {
     transform: translateX(-50%);
     width: 50%;
     height: 2.5px;
-    background-color: var(--color);
+    background-color: var(--nav-bar-icons-color,--color);
     top: 50%;
     transition: transform var(--normal-animation-duration) ease-in-out;
   }

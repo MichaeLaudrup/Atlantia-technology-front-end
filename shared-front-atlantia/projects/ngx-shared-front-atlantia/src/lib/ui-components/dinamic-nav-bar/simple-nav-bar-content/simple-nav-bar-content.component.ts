@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { navBarLink } from '../../../data-models';
 
 
@@ -8,5 +8,8 @@ import { navBarLink } from '../../../data-models';
   styleUrls: ['./simple-nav-bar-content.component.scss']
 })
 export class SimpleNavBarContentComponent {
-  @Input() navegationItems: navBarLink[] = []; 
+  @Input() navegationItems: navBarLink[] = [];
+  @Input() numberHover: number = -1;
+
+  @Output() numberHoverChanged = new EventEmitter<number>();  
 }

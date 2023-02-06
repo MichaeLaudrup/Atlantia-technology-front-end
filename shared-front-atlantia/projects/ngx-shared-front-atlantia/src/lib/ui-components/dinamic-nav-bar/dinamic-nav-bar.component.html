@@ -8,23 +8,35 @@
         <ngx-atlant-dinamic-toggle-menu-icon defaultColor="#5390D9" [menuExpanded]="navContentExpanded"></ngx-atlant-dinamic-toggle-menu-icon>
     </div>
     <nav>
-        <ul class="nav-items-list" >
-            <li class="nav-items-list__item" *ngFor="let item of navItems" [ngClass]="{'only-phone-mod':item.isLogo}">
-                <a [routerLink]="item.link">
-                    <span *ngIf="!item.isLogo"class="material-symbols-outlined nav-icon" [ngClass]="{'only-phone-mod': item.isEmpty || item.isLogo}">{{ item.googleMaterialName }}</span>
-                </a>
-                <div *ngIf="item.isLogo">
-                    <a [routerLink]="item.link">
-                        <img [src]="srcPathLogo" alt="" style="width: 100%; padding: 0.25rem">
-                    </a>
-                </div>
-            </li>
-        </ul>
+      <ul class="nav-items-list" >
+        <li 
+          class="nav-items-list__item"
+          *ngFor="let item of navItems; let i = index"
+          [ngClass]="{'only-phone-mod':item.isLogo, 'hovered': currentHovered === i}"
+          (mouseenter)="currentHovered = i"
+          (mouseleave)="currentHovered = -1"
+          >
+          <a [routerLink]="item.link">
+            <span *ngIf="!item.isLogo"class="material-symbols-outlined nav-icon" [ngClass]="{'only-phone-mod': item.isEmpty || item.isLogo}">{{ item.googleMaterialName }}</span>
+          </a>
+          <div *ngIf="item.isLogo">
+            <a [routerLink]="item.link">
+              <img [src]="srcPathLogo" alt="" style="width: 100%; padding: 0.25rem">
+            </a>
+          </div>
+        </li>
+      </ul>
     </nav>
 </div>
 <nav class="nav-content" [ngClass]="{'expanded': navContentExpanded }">
     <div class="logo-name">TLANTIA</div>
-    <ngx-atlant-simple-nav-bar-content [navegationItems]="navItems"></ngx-atlant-simple-nav-bar-content>
+    <ngx-atlant-simple-nav-bar-content
+      [navegationItems]="navItems"
+      [numberHover]="currentHovered"
+      (numberHoverChanged)="updateItemHovered($event)"
+    >
+    
+    </ngx-atlant-simple-nav-bar-content>
 </nav>
 
 
