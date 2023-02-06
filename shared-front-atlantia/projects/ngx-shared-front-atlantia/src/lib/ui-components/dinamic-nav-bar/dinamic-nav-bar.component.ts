@@ -6,32 +6,14 @@ import { navBarLink } from '../../data-models';
   templateUrl: './dinamic-nav-bar.component.html',
   styleUrls: ['./dinamic-nav-bar.component.scss']
 })
-export class DinamicNavBarComponent implements OnInit {
+export class DinamicNavBarComponent {
   @Input() navContentExpanded = false;
   @Input() navItems: navBarLink[] = []; 
   @Input() srcPathLogo: string = "assets/atlantia-logo.png";
   @Input() linkOnClickLogo: string = "/home";
-  currentHovered = -1; 
+  currentHovered = -1;
+  indexSelected = -1; 
 
-  ngOnInit(): void {
-    this.navContentExpanded = false; 
-    const navItemsLength = this.navItems.length;
-    const logoPosition = Math.ceil(navItemsLength / 2);
-    
-    this.navItems.splice(logoPosition, 0, {
-      name: "",
-      link: "",
-      isLogo: true
-    }); 
-    if ((navItemsLength % 2) > 0) {
-      this.navItems.push({
-        name: "",
-        link: "",
-        isEmpty: true,
-      })
-    };  
-
-  }
 
   toggleExpanded() {
     this.navContentExpanded = !this.navContentExpanded;

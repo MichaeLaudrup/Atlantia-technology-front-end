@@ -1,11 +1,13 @@
 <nav class="navegation">
   <ul class="list-items">
-    <ng-container *ngFor="let navItem of navegationItems; let selected = index">
+    <ng-container *ngFor="let navItem of navegationItems; let indexItem = index">
       <li 
         class="nav-item"
-        *ngIf="!navItem.isLogo && !navItem.isEmpty"
-        [ngClass]="{'hovered': selected === numberHover}"
-        (mouseenter)="numberHoverChanged.emit(selected)"
+        [ngClass]="{
+          'hovered': (indexItem === numberHover) && (indexItem !== itemIndexSelected),
+          'selected': itemIndexSelected === indexItem
+        }"
+        (mouseenter)="numberHoverChanged.emit(indexItem)"
         (mouseleave)="numberHoverChanged.emit(-1)"
       >
         <a [routerLink]="navItem.link">{{ navItem.name }}</a>

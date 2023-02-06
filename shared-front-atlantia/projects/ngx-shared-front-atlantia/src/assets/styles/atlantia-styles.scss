@@ -2,7 +2,8 @@
 @import './colors/atlantia-colors.scss'; 
 :root {
     //GENERAL
-    --normal-animation-duration: .7s; 
+    --normal-animation-duration: .7s;
+    --border-length-1: 5px;  
 
     --regular-transition: all var(--normal-animation-duration) ease-in-out; 
 
@@ -20,7 +21,7 @@
         --nav-bar-logo-color: #edede9; 
         --nav-bar-icons-color:var(--color-3); 
         --nav-bar-icons-hover-color: var(--nav-bar-primary-color);
-        --nav-bar-line-bg: var(--nav-bar-primary-color); 
+        --nav-bar-line-bg: var(--nav-bar-primary-color);
 }
 
 ul {

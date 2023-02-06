@@ -9,22 +9,27 @@
     </div>
     <nav>
       <ul class="nav-items-list" >
-        <li 
-          class="nav-items-list__item"
-          *ngFor="let item of navItems; let i = index"
-          [ngClass]="{'only-phone-mod':item.isLogo, 'hovered': currentHovered === i}"
-          (mouseenter)="currentHovered = i"
-          (mouseleave)="currentHovered = -1"
+        <ng-container *ngFor="let item of navItems; let i = index">
+          <li 
+            class="nav-items-list__item"
+            [ngClass]="{'hovered': (currentHovered === i)}"
+            (mouseenter)="currentHovered = i"
+            (mouseleave)="currentHovered = -1"
+            (click)="indexSelected = i"
           >
-          <a [routerLink]="item.link">
-            <span *ngIf="!item.isLogo"class="material-symbols-outlined nav-icon" [ngClass]="{'only-phone-mod': item.isEmpty || item.isLogo}">{{ item.googleMaterialName }}</span>
-          </a>
-          <div *ngIf="item.isLogo">
             <a [routerLink]="item.link">
-              <img [src]="srcPathLogo" alt="" style="width: 100%; padding: 0.25rem">
+              <span class="material-symbols-outlined nav-icon">{{ item.googleMaterialName }}</span>
             </a>
-          </div>
-        </li>
+          </li>
+          <li
+            class="nav-items-list__item only-phone"
+            *ngIf="i === ((navItems.length / 2) - 1)"
+            (click)="toggleExpanded()"
+          >
+          <ngx-atlant-dinamic-toggle-menu-icon [menuExpanded]="navContentExpanded"></ngx-atlant-dinamic-toggle-menu-icon>
+          </li>
+
+        </ng-container>
       </ul>
     </nav>
 </div>
@@ -34,8 +39,8 @@
       [navegationItems]="navItems"
       [numberHover]="currentHovered"
       (numberHoverChanged)="updateItemHovered($event)"
+      [itemIndexSelected]="indexSelected"
     >
-    
     </ngx-atlant-simple-nav-bar-content>
 </nav>
 
