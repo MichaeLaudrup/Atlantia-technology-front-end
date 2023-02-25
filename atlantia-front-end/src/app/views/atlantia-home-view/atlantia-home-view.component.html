@@ -1,7 +1,28 @@
-<div content class="d-content" style="display: flex;align-items: center; justify-content: center; height: 100%; flex-direction: column;">
-    <div class="appear-smothly" style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
-      <img src="/assets/atlantia-logo-white.png" alt="">
-      <h1 style="font-size: 5.75rem; color:white">ATLANTIA</h1>
-      <p style="font-size: 1.2rem; color:white">Donde la tecnología y el ser humano se unen para crear progreso</p>
+<div class="d-content">
+  <div class="welcome-container appear-after-slide">
+    <div class="image-container">
+      <img *ngIf="!logoBright" class="logo-image" src="/assets/atlantia-logo-white.png" alt="">
+      <img *ngIf="logoBright" class="logo-image" src="/assets/atlantia-logo-white-ligth.png" alt="">
     </div>
+    <button
+      class='neon-btn'
+      (mouseenter)="logoBright = true"
+      (mouseleave)="logoBright = false"
+    >
+      Cuentame más
+    </button>
+  </div>
 </div>
+
+
+<!-- <span class='glowing-txt'>Quiero<span class='faulty-letter'>L</span>saber más</span> -->
+<!-- 
+  <p>
+      Atlantia proporciona un espacio para iniciarse en el mundo 
+      de la inteligencia artificial, desde un nivel de 
+      principiante a un nivel avanzado, buscando la armonía entre 
+      teoría y práctica y con la finalidad  de que los programadores y tecnólogos
+      puedan adaptarse con mayor facilidad a la irrupción de esta
+      tecnología en el mundo actual.
+    </p>
+ -->

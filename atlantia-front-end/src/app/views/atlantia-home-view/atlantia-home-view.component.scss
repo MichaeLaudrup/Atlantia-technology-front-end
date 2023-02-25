@@ -1,9 +1,51 @@
+@import 'node_modules/ngx-shared-front-atlantia/src/assets/styles/mixins/responsive-mixin.scss';
+
 :host {
     width: 100%;
     height: 100%;
 }
+
 .d-content {
+    width: 100%;
+    height: 100%;
     background-image: url('/assets/atlantia-bg.jpg');
     background-size: cover;
     background-position: center center;
+    display: flex;
+    gap: 1rem; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.welcome-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 500px;
+    img {
+        width: 100%;
+    }
+
+    @include min-resolution(mobile-small) {
+        width: 80%;
+    }
+
+}
+
+
+.image-container {
+    min-height: 460px;
+    @include max-resolution(mobile-small) {
+        min-height: 400px;
+    }
+}
+
+.logo-title {
+    font-size: 6rem;
+    color:white; 
+}
+

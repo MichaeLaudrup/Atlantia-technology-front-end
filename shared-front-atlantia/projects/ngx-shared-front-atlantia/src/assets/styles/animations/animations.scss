@@ -1,0 +1,19 @@
+:root {
+  --quickly-animation-duraction: .3s; 
+  --normal-animation-duration: .7s; 
+  --pages-slides-duration: 1.2s; 
+}
+
+@keyframes appear-smothly-with-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.appear-after-slide {
+  animation: appear-smothly-with-opacity var(--normal-animation-duration) ease-in-out var(--pages-slides-duration);
+  animation-fill-mode: backwards;
+}

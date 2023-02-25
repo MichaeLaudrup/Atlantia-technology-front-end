@@ -12,7 +12,6 @@ export class DinamicNavBarComponent {
   @Input() srcPathLogo: string = "assets/atlantia-logo.png";
   @Input() linkOnClickLogo: string = "/home";
   currentHovered = -1;
-  indexSelected = -1; 
 
 
   toggleExpanded() {

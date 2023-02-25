@@ -6,5 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./atlantia-home-view.component.scss']
 })
 export class AtlantiaHomeViewComponent{
-
+  logoBright: boolean = false; 
 }

@@ -9,8 +9,8 @@ import { navBarLink } from '../../../data-models';
 })
 export class SimpleNavBarContentComponent {
   @Input() navegationItems: navBarLink[] = [];
-  @Input() numberHover: number = -1;
-  @Input() itemIndexSelected: number = -1; 
+  @Input() numberHover: number = -1; 
 
-  @Output() numberHoverChanged = new EventEmitter<number>();  
+  @Output() numberHoverChanged = new EventEmitter<number>();
+  @Output() itemSelected = new EventEmitter<number>(); 
 }

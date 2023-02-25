@@ -3,12 +3,11 @@
     <ng-container *ngFor="let navItem of navegationItems; let indexItem = index">
       <li 
         class="nav-item"
-        [ngClass]="{
-          'hovered': (indexItem === numberHover) && (indexItem !== itemIndexSelected),
-          'selected': itemIndexSelected === indexItem
-        }"
+        [ngClass]="{ 'hovered': (indexItem === numberHover)}"
         (mouseenter)="numberHoverChanged.emit(indexItem)"
         (mouseleave)="numberHoverChanged.emit(-1)"
+        (click)="itemSelected.emit(indexItem)"
+        routerLinkActive="selected"
       >
         <a [routerLink]="navItem.link">{{ navItem.name }}</a>
       </li>

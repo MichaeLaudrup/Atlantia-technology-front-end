@@ -1,3 +1,5 @@
+@import 'node_modules/ngx-shared-front-atlantia/src/assets/styles/mixins/responsive-mixin.scss';
+
 :host, .container {
     width: 100%;
     height: 100%;
@@ -6,11 +8,20 @@
 .container {
     background-color: white;
     display: flex;
+    @include max-resolution(mobile) {
+        flex-direction: column;
+    }
 }
 
 .left-side, .right-side {
     height: 100%;
     width: 50%;
+
+    @include max-resolution(mobile) {
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+    }
     
 }
 
@@ -20,25 +31,32 @@
     flex-direction: column;
     justify-content: center;
 
-    .content {
-        transform: translateY(-30%);
+    @include max-resolution(mobile) {
+        padding: 1.25rem; 
     }
 }
 
 .content {
     h2 {
-        font-size: 3rem;
-        padding-bottom: 1.5rem;
+        font-size: 1.75rem;
+        padding-bottom: 1rem;
+        text-align: left;
     }
     p {
-        font-size: 2rem;
+        font-size: 1.25rem;
+        text-align: left;
+        margin-bottom: 1.25rem;
     }
+    text-align: center;
 }
 
 .right-side {
     background-image: url('/assets/software-engineer.jpg');
     background-position: center center;
     background-size: cover;
+    @include max-resolution(mobile-medium) { 
+        order: -1;
+    }
 }
 
 

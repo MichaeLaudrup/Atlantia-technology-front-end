@@ -1,0 +1,39 @@
+/* 
+  320px for small mobile devices
+  480px for medium mobile devices
+  576px for small to medium mobile devices
+  768px for tablets and larger mobile devices
+  992px for desktop screens and large mobile devices in landscape mode
+  1200px for desktop screens and very large mobile devices in landscape mode
+  1400px for high-resolution desktop screens
+  1600px for extremely high-resolution desktop screens
+*/
+
+
+
+// Definición de breakpoints comunes para diseño responsive
+$breakpoints: (
+  small-mobile: 480px,
+  medium-mobile: 576px,
+  mobile: 768px,
+  tablet: 992px,
+  laptop: 1200px,
+  desktop: 1400px,
+  large-desktop: 1600px
+);
+
+// Mixin para aplicar reglas de estilo a dispositivos con una resolución máxima
+@mixin max-resolution($breakpoint) {
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+
+
+// Mixin para aplicar reglas de estilo a dispositivos con una resolución mínima
+@mixin min-resolution($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}

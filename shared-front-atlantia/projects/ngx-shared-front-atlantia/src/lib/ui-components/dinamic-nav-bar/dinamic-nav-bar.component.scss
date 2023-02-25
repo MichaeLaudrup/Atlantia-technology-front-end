@@ -1,16 +1,17 @@
+@import 'C:/Users/maike/Desktop/GitZone/Atlantia-technology-front-end/shared-front-atlantia/projects/ngx-shared-front-atlantia/src/assets/styles/mixins/responsive-mixin.scss';
 :host {
     width: 55px;
     display: block;
 }
 
 .nav-line {
-    position:fixed; 
-    top: 0; 
-    left: 0;
-    bottom: 0;
-    background-color: var(--nav-bar-line-bg);
-    width: var(--nav-bar-length, 55px);
-    z-index: 2;
+  position:fixed; 
+  top: 0; 
+  left: 0;
+  bottom: 0;
+  background-color: var(--nav-bar-line-bg);
+  width: var(--nav-bar-length, 55px);
+  z-index: 2;
 }
 
 .logo-item, .nav-items-list__item, .toggle-icon {
@@ -38,12 +39,17 @@
       cursor: pointer;
       transition: all var(--normal-animation-duration) ease-in-out;
 
-      @media screen and (min-width: 601px) {
-        &:hover, &.hovered {
+      
+      @include min-resolution(medium-mobile) {
+        &:hover, &.hovered, &.nav-expanded.active {
           background-color: var(--nav-bar-logo-bg);
           .nav-icon {
             color: var(--nav-bar-icons-hover-color);
           }
+        }
+
+        &.active {
+          border-right: 5px solid var(--nav-bar-logo-bg);
         }
       }
   }
@@ -56,16 +62,14 @@
 }
 
 .nav-content {
-    background-color: var(--nav-bar-primary-color);
     position: fixed;
     top: 0; 
     bottom: 0;
     z-index: 1;
-    left: calc(-1 * var(--nav-bar-content-length) + var(--border-length-1));
+    left: calc(-1 * var(--nav-bar-content-length));
     margin-left: var(--nav-bar-length);
     width: var(--nav-bar-content-length);
-    transition: left var(--normal-animation-duration) ease-in-out;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: left var(--quickly-animation-duraction) ease-in-out;
     &.expanded {
       left: 0; 
     }
@@ -79,14 +83,14 @@
   width: 100%;
   height: var(--nav-bar-length);
   color: var(--nav-bar-logo-color); 
-  background-color: var(--nav-bar-logo-bg);
+  background-color: var(--nav-bar-primary-color-transparent);
 }
 
 .only-phone{
   display: none; 
 }
 
-@media screen and (max-width: 550px ) {
+@include max-resolution(medium-mobile) {
   .logo-item {
     display: none; 
   }
@@ -112,7 +116,7 @@
     margin-left: 0;
     left: 0;
     top: 100%; 
-    transition: top var(--normal-animation-duration) ease-in-out;
+    transition: top var(--quickly-animation-duraction) ease-in-out;
     &.expanded {
       top: 0;
     }

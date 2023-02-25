@@ -1,5 +1,7 @@
+@import 'C:/Users/maike/Desktop/GitZone/Atlantia-technology-front-end/shared-front-atlantia/projects/ngx-shared-front-atlantia/src/assets/styles/mixins/responsive-mixin.scss';
+
 .navegation {
-    background: var(--nav-bar-primary-color);
+    background-color: var(--nav-bar-primary-color-transparent);
     height: 100%;
     padding-top: var(--nav-bar-length);
 }
@@ -24,20 +26,42 @@
       transition: all var(--normal-animation-duration) ease-in-out;
     }
 
-    &:hover, &.hovered {
+    &:hover:not(.selected), &.hovered:not(.selected) {
       background-color: var(--nav-bar-logo-bg);
-      a {
+      a, a:link, a:active {
         color: var(--nav-bar-icons-hover-color); 
       }
     }
 
     &.selected {
       border-right: var(--border-length-1) solid var(--nav-bar-icons-color);
+      position: relative;
+      padding-left: 0;
+      background-color: var(--color-3-light1);
+      &::before {
+        content: ''; 
+        position: 'absolute'; 
+        left: 0; 
+        top: 0;
+        width: 0; 
+        height: 0; 
+        border-left: calc( var(--nav-bar-length) / 3 ) solid var(--nav-bar-icons-color);
+        border-top: calc( var(--nav-bar-length) / 2) solid transparent;
+        border-bottom: calc( var(--nav-bar-length) / 2) solid transparent;
+        display: block;
+        padding-left: .5rem;
+        animation: appear-smothly-with-opacity var(--normal-animation-duration) ease-in-out .5s ; 
+        animation-fill-mode: backwards;
+      }
+
+      a, a:link, a:active {
+        font-weight: bold;
+      }
     }
   }
 }
 
-@media screen and (max-width: 550px ) {
+@include max-resolution(medium-mobile) {
   .list-items {
     .nav-item {
       padding-left: 0rem;
@@ -45,10 +69,30 @@
       a:link, a, a:visited {
         justify-content: center;
       }
+
+      &.selected {
+        border-right: none;
+      }
+      
+      &.selected::after { 
+        content: ''; 
+        position: 'absolute'; 
+        left: cacl( 100% - var(--nav-bar-length)); 
+        top: 0;
+        width: 0; 
+        height: 0; 
+        border-right: calc( var(--nav-bar-length) / 3 ) solid var(--nav-bar-icons-color);
+        border-top: calc( var(--nav-bar-length) / 2) solid transparent;
+        border-bottom: calc( var(--nav-bar-length) / 2) solid transparent;
+        display: block;
+        padding-left: .5rem;
+        animation: .5s 1s appear-smothly-with-opacity;
+      }
     }
   }
 
   .navegation {
     padding-top: 0;
+
   }
 }

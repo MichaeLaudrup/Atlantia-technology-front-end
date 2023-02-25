@@ -22,14 +22,14 @@ export class AtlantiaMainViewComponent {
     {
       googleMaterialName: 'school',
       name:"Alejandría", 
-      link:""
+      link:"alejandria-project"
     },
     {
       googleMaterialName: 'light_mode',
       name:"Apolo", 
-      link:""
-    },
-  
+      link:"hermes-project"
+    }
+
   ]; 
 
   processOutlet(event: any, outlet: RouterOutlet) {

@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-shared-front-atlantia/src/assets/styles/mixins/responsive-mixin.scss",
               "node_modules/ngx-shared-front-atlantia/src/assets/styles/atlantia-styles.scss",
               "src/styles.scss"
             ],

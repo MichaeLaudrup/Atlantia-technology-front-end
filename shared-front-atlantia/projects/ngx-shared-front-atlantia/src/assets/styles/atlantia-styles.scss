@@ -1,35 +1,58 @@
 @import 'material-symbols';
-@import './colors/atlantia-colors.scss'; 
+@import './colors/atlantia-colors.scss';
+@import './animations/animations.scss';
+@import './components/small-ui-components.scss';
+@import './mixins/responsive-mixin.scss';
+@import './components/neon-button.scss';
+
 :root {
-    //GENERAL
-    --normal-animation-duration: .7s;
-    --border-length-1: 5px;  
+  //GENERAL
+  
+  --border-length-1: 5px;  
+  --border-radius-1: 2px; 
+  --regular-transition: all var(--normal-animation-duration) ease-in-out; 
 
-    --regular-transition: all var(--normal-animation-duration) ease-in-out; 
+  --font-color: black; 
+  --font-color-inverse: white; 
+  //NAVEGATION-BAR
+    //NAVIGATION-BAR-MEASURES
+    --nav-bar-length: 50px;
+    --nav-bar-content-length: 300px;
+    --nav-break-width-to-phone: 550px; 
 
-    --font-color: black; 
-    --font-color-inverse: white; 
-    //NAVEGATION-BAR
-        //NAVIGATION-BAR-MEASURES
-        --nav-bar-length: 50px;
-        --nav-bar-content-length: 300px;
-        --nav-break-width-to-phone: 550px; 
-
-        //NAVIGATION-BAR-COLORS
-        --nav-bar-primary-color: #edede9 ;  
-        --nav-bar-logo-bg: var(--color-3);
-        --nav-bar-logo-color: #edede9; 
-        --nav-bar-icons-color:var(--color-3); 
-        --nav-bar-icons-hover-color: var(--nav-bar-primary-color);
-        --nav-bar-line-bg: var(--nav-bar-primary-color);
+    //NAVIGATION-BAR-COLORS
+    --nav-bar-primary-color: #edede9 ;
+    --nav-bar-primary-color-transparent: #edede9eb; 
+    --nav-bar-logo-bg: var(--color-3);
+    --nav-bar-logo-color: #edede9; 
+    --nav-bar-icons-color:var(--color-3); 
+    --nav-bar-icons-hover-color: var(--nav-bar-primary-color);
+    --nav-bar-line-bg: var(--nav-bar-primary-color);
+    --nav-bar-selected-item-bg: var(); 
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+html, body {
+  font-size: 16px;
+}
+
+
+@include min-resolution(mobile) {
+  html, body {
+    font-size: 17px;
+  }
+}
+
+@include min-resolution(laptop) {
+  html, body {
+    font-size: 18px;
+  }
+}
 

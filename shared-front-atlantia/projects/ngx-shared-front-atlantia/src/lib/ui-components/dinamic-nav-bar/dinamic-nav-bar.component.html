@@ -12,10 +12,11 @@
         <ng-container *ngFor="let item of navItems; let i = index">
           <li 
             class="nav-items-list__item"
-            [ngClass]="{'hovered': (currentHovered === i)}"
+            [ngClass]="{'hovered': (currentHovered === i), 'nav-expanded': navContentExpanded}"
             (mouseenter)="currentHovered = i"
             (mouseleave)="currentHovered = -1"
-            (click)="indexSelected = i"
+            (click)="navContentExpanded = false"
+            routerLinkActive="active"
           >
             <a [routerLink]="item.link">
               <span class="material-symbols-outlined nav-icon">{{ item.googleMaterialName }}</span>
@@ -34,12 +35,12 @@
     </nav>
 </div>
 <nav class="nav-content" [ngClass]="{'expanded': navContentExpanded }">
-    <div class="logo-name">TLANTIA</div>
+    <div class="logo-name"></div>
     <ngx-atlant-simple-nav-bar-content
       [navegationItems]="navItems"
       [numberHover]="currentHovered"
       (numberHoverChanged)="updateItemHovered($event)"
-      [itemIndexSelected]="indexSelected"
+      (itemSelected)="navContentExpanded = false"
     >
     </ngx-atlant-simple-nav-bar-content>
 </nav>
