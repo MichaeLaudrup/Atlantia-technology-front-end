@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { navBarLink } from '../../../data-models';
+import { navBarLink } from '../../../common';
 
 
 @Component({

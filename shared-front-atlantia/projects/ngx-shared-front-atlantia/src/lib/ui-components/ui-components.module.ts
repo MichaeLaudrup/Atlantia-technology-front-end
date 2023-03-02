@@ -6,12 +6,16 @@ import { DinamicWebPagesComponent } from './dinamic-web-pages/dinamic-web-pages.
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SimpleComponentsModule } from './simple-components';
+import { VerticalInteractiveMenuComponent } from './vertical-interactive-menu/vertical-interactive-menu.component';
+import { MenuItemSizePipe } from '../common/pipes/menu-item-height.pipe';
 
 @NgModule({
   declarations: [
     DinamicNavBarComponent,
     SimpleNavBarContentComponent,
-    DinamicWebPagesComponent
+    DinamicWebPagesComponent,
+    VerticalInteractiveMenuComponent,
+    MenuItemSizePipe
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,8 @@ import { SimpleComponentsModule } from './simple-components';
   ],
   exports: [
     DinamicNavBarComponent,
-    DinamicWebPagesComponent
+    DinamicWebPagesComponent,
+    VerticalInteractiveMenuComponent
   ]
 })
 export class UiComponentsModule { }

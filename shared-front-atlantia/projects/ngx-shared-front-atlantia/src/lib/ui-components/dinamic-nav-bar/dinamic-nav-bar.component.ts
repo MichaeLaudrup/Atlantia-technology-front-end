@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { navBarLink } from '../../data-models';
+import { navBarLink } from '../../common';
 
 @Component({
   selector: 'ngx-atlant-dinamic-nav-bar',
@@ -19,8 +19,6 @@ export class DinamicNavBarComponent {
   }
 
   updateItemHovered(currentHovered:number) {
-    debugger;
-    console.log(currentHovered)
     this.currentHovered = currentHovered; 
   }
 }

@@ -17,3 +17,24 @@
   animation: appear-smothly-with-opacity var(--normal-animation-duration) ease-in-out var(--pages-slides-duration);
   animation-fill-mode: backwards;
 }
+
+
+@keyframes from-left {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes from-right {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -10,8 +10,8 @@
   
   --border-length-1: 5px;  
   --border-radius-1: 2px; 
-  --regular-transition: all var(--normal-animation-duration) ease-in-out; 
-
+  --regular-transition: all var(--normal-animation-duration) ease-in-out;
+  --quickly-transition: all var(--quickly-animation-duraction) ease-in-out; 
   --font-color: black; 
   --font-color-inverse: white; 
   //NAVEGATION-BAR
@@ -21,7 +21,7 @@
     --nav-break-width-to-phone: 550px; 
 
     //NAVIGATION-BAR-COLORS
-    --nav-bar-primary-color: #edede9 ;
+    --nav-bar-primary-color: whitesmoke ;
     --nav-bar-primary-color-transparent: #edede9eb; 
     --nav-bar-logo-bg: var(--color-3);
     --nav-bar-logo-color: #edede9; 

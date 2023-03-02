@@ -11,7 +11,7 @@
   bottom: 0;
   background-color: var(--nav-bar-line-bg);
   width: var(--nav-bar-length, 55px);
-  z-index: 2;
+  z-index: 100;
 }
 
 .logo-item, .nav-items-list__item, .toggle-icon {
@@ -65,7 +65,7 @@
     position: fixed;
     top: 0; 
     bottom: 0;
-    z-index: 1;
+    z-index: 99;
     left: calc(-1 * var(--nav-bar-content-length));
     margin-left: var(--nav-bar-length);
     width: var(--nav-bar-content-length);
