@@ -6,5 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./atlantia-home-view.component.scss']
 })
 export class AtlantiaHomeViewComponent{
-  logoBright: boolean = false; 
+  logoBright: boolean = false;
+  menuOpened: boolean = false; 
+  
+  constructor() {
+    this.preloadImages(); 
+  }
+
+  preloadImages() {
+    const firstImage = new Image(); 
+    firstImage.src = '/assets/atlantia-logo-white.png';
+    
+    const secondImage = new Image(); 
+    secondImage.src = '/assets/atlantia-logo-white-ligth.png'; 
+  }
+
 }

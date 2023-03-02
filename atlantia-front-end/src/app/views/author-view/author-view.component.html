@@ -1,3 +1,7 @@
+<ngx-atlant-vertical-interactive-menu
+    *ngIf="menuOpened"
+    [menuItems]="menuData"
+></ngx-atlant-vertical-interactive-menu>
 <div class="container">
     <div class="left-side">
         <div class="content">
@@ -8,7 +12,7 @@
                  Si buscas un candidato altamente cualificado y comprometido, estás en el lugar adecuado.
                  Navegando por esta sección podrás apreciar mi potencial y lo que puedo aportar a tu empresa.
             </p>
-            <button class="generic-btn">Cuentame más</button>
+            <button class="generic-btn" (click)="menuOpened=true">Cuentame más</button>
         </div>
     </div>
     <div class="right-side">

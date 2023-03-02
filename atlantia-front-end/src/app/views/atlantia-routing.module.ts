@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
+import { VerticalInteractiveMenuComponent } from 'ngx-shared-front-atlantia'; 
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AtlantiaHomeViewComponent } from './atlantia-home-view/atlantia-home-view.component';
 import { AuthorViewComponent } from './author-view/author-view.component';
 import { AtlantiaAlejandriaViewComponent } from './atlantia-alejandria-view/atlantia-alejandria-view.component';
 import { AtlantiaHermesViewComponent } from './atlantia-hermes-view/atlantia-hermes-view.component';
-
 const routes: Routes = [
     {
         path: 'home', component:AtlantiaHomeViewComponent, data : { order: 0},
     },
     {
-        path: 'about-me', component: AuthorViewComponent, data: { order: 1 }
+        path: 'about-me', component: AuthorViewComponent, data: { order: 1 }, children: [
+          { path: 'menu', component: VerticalInteractiveMenuComponent }
+        ]
     },
     {
       path: 'alejandria-project', component: AtlantiaAlejandriaViewComponent, data: { order: 2 }
