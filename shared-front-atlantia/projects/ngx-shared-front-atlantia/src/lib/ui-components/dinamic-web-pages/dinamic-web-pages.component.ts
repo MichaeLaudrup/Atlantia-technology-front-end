@@ -1,5 +1,5 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'ngx-atlant-dinamic-web-pages',
@@ -44,7 +44,8 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
         ])
       ])
     ])
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DinamicWebPagesComponent implements OnChanges {
   @Input() currentRoute!: number;  

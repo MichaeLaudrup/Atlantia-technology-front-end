@@ -1,6 +1,13 @@
 <div class="main-layout">
-    <ngx-atlant-dinamic-nav-bar [navItems]="navItems" srcPathLogo="assets/atlantia-logo-white.png"></ngx-atlant-dinamic-nav-bar>
+    <ngx-atlant-dinamic-nav-bar 
+      [navItems]="navItems"
+      srcPathLogo="assets/atlantia-logo-white.png"
+      mobileNavSrcPathLogo="assets/atlantia-logo.png"
+      >
+    </ngx-atlant-dinamic-nav-bar>
     <ngx-atlant-dinamic-web-pages [currentRoute]="currentRoute">
         <router-outlet content #outlet="outlet" (activate)="processOutlet($event, outlet)"></router-outlet>
     </ngx-atlant-dinamic-web-pages>
   </div>
+
+<ngx-atlant-global-spinner *ngIf="showSpinner"></ngx-atlant-global-spinner>

@@ -16,6 +16,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include max-resolution(mobile) {
+        padding-bottom: var(--nav-bar-length);
+    }
 }
 
 .welcome-container {
@@ -25,22 +28,14 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    max-width: 500px;
+    max-width: 400px;
     img {
         width: 100%;
     }
 
-    @include min-resolution(mobile-small) {
-        width: 80%;
-    }
-
-}
-
-
-.image-container {
-    min-height: 460px;
-    @include max-resolution(mobile-small) {
-        min-height: 400px;
+    
+    @include min-resolution(laptop) {
+        max-width: 500px;
     }
 }
 

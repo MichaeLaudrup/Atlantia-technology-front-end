@@ -100,9 +100,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-left-radius: 20%;
-    border-bottom-right-radius: 20%;
-    border-bottom: 2px solid black;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-bottom: 2px solid var(--color-3);
     background-color: var(--nav-bar-primary-color-transparent);
     img {
       width: calc(3 * var(--nav-bar-length));

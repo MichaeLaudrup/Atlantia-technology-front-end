@@ -7,3 +7,25 @@
 .container{
     position:relative;
 }
+
+/* Clase para el estado de entrada */
+.animate-enter {
+    position: absolute;
+    left: -100%;
+    top: 0; 
+    bottom: 0;
+    width: 100%;
+    transform: scale(.3);
+    opacity: .5;
+  }
+  
+  /* Clase para el estado de salida */
+  .animate-leave {
+    position: absolute;
+    left: 0%;
+    top: 0; 
+    bottom: 0;
+    width: 100%;
+    transform: scale(1);
+    opacity: 1;
+  }

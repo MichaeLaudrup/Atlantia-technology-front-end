@@ -13,7 +13,8 @@
   --regular-transition: all var(--normal-animation-duration) ease-in-out;
   --quickly-transition: all var(--quickly-animation-duraction) ease-in-out; 
   --font-color: black; 
-  --font-color-inverse: white; 
+  --font-color-inverse: white;
+  --call-to-action-danger: rgb(255, 132, 132); 
   //NAVEGATION-BAR
     //NAVIGATION-BAR-MEASURES
     --nav-bar-length: 50px;
@@ -35,8 +36,9 @@ ul {
   list-style: none;
 }
 
-a {
+a, a:active, a:visited {
   text-decoration: none;
+  color: var(--font-color)
 }
 
 html, body {

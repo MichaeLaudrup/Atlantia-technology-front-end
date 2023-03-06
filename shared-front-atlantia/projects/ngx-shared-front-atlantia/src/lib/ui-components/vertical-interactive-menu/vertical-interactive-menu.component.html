@@ -1,30 +1,39 @@
 <nav class="menu-nav">
   <ul class="menu-nav__list" (mouseleave)="isSomeLinkHovered = false">
-    <span
-      class="material-symbols-outlined go-back-icon"
-      [ngClass]="{'hide': !isSomeLinkSelected}"
-      (click)="backToMenu()"
-    
-      >arrow_back</span>
+    <a [routerLink]="fatherRoute">
+      <span
+        class="material-symbols-outlined go-back-icon call-to-action-btns"
+        [ngClass]="{'hide': !isSomeLinkSelected}"
+        >arrow_back
+      </span>
+    </a>
+
+    <button role="button" class="call-to-action-btns close-button" (click)="menuClosed.emit()">
+      <span class="material-symbols-outlined">
+        close
+      </span>
+    </button>
     <ng-container *ngFor="let item of menuItems; let i = index">
-      
       <li
         class="list-item"
         [tabindex]="i"
-        [style.height]="item | calcVerticalMenuItemSize: isSomeLinkHovered: menuItems.length: isSomeLinkSelected: true"
-        [style.width]="item | calcVerticalMenuItemSize : isSomeLinkHovered: menuItems.length: isSomeLinkSelected: false"
+        [style.height]="item | calcVerticalMenuItemSize: isSomeLinkHovered: menuItems.length: isSomeLinkSelected: true "
+        [style.width]="(item | calcVerticalMenuItemSize : isSomeLinkHovered: menuItems.length: isSomeLinkSelected: false)"
         [style.zIndex]="(item.status === LinkStatus.SELECTED) ? '1' : '0'"
-        (mouseenter)="!isMobile && itemHovered(item)"
-        (mouseleave)="!isMobile && (!isSomeLinkSelected && item.status = LinkStatus.FREE); isSomeLinkHovered = false"
-        (click)="item.status = LinkStatus.SELECTED; isSomeLinkSelected = true; currentItemIndexSelected = i"
       > 
         <div class="list-item__image" [style.backgroundImage]="(!item.imgUrl) ? '': 'url('+ item.imgUrl +')'">
-          <div class="list-item__veil">
-            
-          </div>
           <a 
-          class="list-item__link"
-          >{{ item.name }}</a>
+            class="list-item__veil" [routerLink]="item.routerLink"
+            [ngClass]="{'selected': item.status === LinkStatus.SELECTED}"
+            (mouseenter)="!isMobile && itemHovered(item)"
+            (mouseleave)="!isMobile && (!isSomeLinkSelected && item.status = LinkStatus.FREE); isSomeLinkHovered = false"
+            (click)="item.status = LinkStatus.SELECTED; isSomeLinkSelected = true; currentItemIndexSelected = i"
+          >
+            <ng-content *ngIf="item.status === LinkStatus.SELECTED"></ng-content>
+            <span class="list-item__text" *ngIf="item.status !== LinkStatus.SELECTED">
+              {{ item.name }}
+            </span>
+          </a>
         </div>
         
       </li>

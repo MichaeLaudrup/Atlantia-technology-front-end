@@ -1,20 +1,12 @@
 import { Pipe, PipeTransform } from "@angular/core";
 import { VerticalMenuItem } from "../interfaces";
 import { linkStatus } from "../enums";
-import { mobile } from "../consts";
 
 @Pipe({
   name: 'calcVerticalMenuItemSize'
 })
 export class MenuItemSizePipe implements PipeTransform {
-  transform(item: VerticalMenuItem, isSomeLinkHovered: boolean, totalItems: number, isSomeLinkSelected: boolean, isHeight: boolean): string {
-    const windowWidth = window.innerWidth; 
-    if ((windowWidth <= mobile) && !isHeight) {
-      return '100%'; 
-    } else if( windowWidth > mobile && isHeight) {
-      return '100%'; 
-    }
-
+  transform(item: VerticalMenuItem, isSomeLinkHovered: boolean, totalItems: number, isSomeLinkSelected: boolean, isHeight: boolean): string { 
     switch(item.status) {
       case linkStatus.SELECTED: 
         return '100%';

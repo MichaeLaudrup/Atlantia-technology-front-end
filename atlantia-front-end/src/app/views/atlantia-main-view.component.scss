@@ -2,8 +2,6 @@
 
 :host {
     position: relative;
-    width: 100vw;
-    height: 100vh;
 }
 
 .main-layout {
@@ -12,8 +10,12 @@
     background-image: linear-gradient(45deg, white, rgb(200, 200, 200));
 }
 
-@include min-resolution(medium-mobile) {
+@include min-resolution(mobile) {
     .main-layout {
         padding-left: calc(var(--nav-bar-length));
     }
+}
+
+.showSpinner {
+    display: block !important; 
 }
