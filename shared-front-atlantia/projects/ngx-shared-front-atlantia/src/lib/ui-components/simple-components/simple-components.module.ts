@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DinamicToggleMenuIconComponent } from './dinamic-toggle-menu-icon/dinamic-toggle-menu-icon.component';
+import { GlobalSpinnerComponent } from './global-spinner/global-spinner.component';
 
-const exportableComponents = [DinamicToggleMenuIconComponent];
+const exportableComponents = [DinamicToggleMenuIconComponent, GlobalSpinnerComponent];
 
 @NgModule({
   declarations: [
-    ...exportableComponents
+    ...exportableComponents,
   ],
   imports: [
     CommonModule,

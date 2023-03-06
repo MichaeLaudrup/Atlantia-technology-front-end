@@ -3,7 +3,7 @@
 .navegation {
     background-color: var(--nav-bar-primary-color-transparent);
     height: 100%;
-    padding-top: var(--nav-bar-length);
+    padding-top: calc( 2 * var(--nav-bar-length));
 }
 
 .list-items {
@@ -26,10 +26,12 @@
       transition: all var(--normal-animation-duration) ease-in-out;
     }
 
-    &:hover:not(.selected), &.hovered:not(.selected) {
-      background-color: var(--nav-bar-logo-bg);
-      a, a:link, a:active {
-        color: var(--nav-bar-icons-hover-color); 
+    @include min-resolution(mobile) {
+      &:hover:not(.selected), &.hovered:not(.selected) {
+        background-color: var(--nav-bar-logo-bg);
+        a, a:link, a:active {
+          color: var(--nav-bar-icons-hover-color); 
+        }
       }
     }
 
@@ -61,7 +63,7 @@
   }
 }
 
-@include max-resolution(medium-mobile) {
+@include max-resolution(mobile) {
   .list-items {
     .nav-item {
       padding-left: 0rem;

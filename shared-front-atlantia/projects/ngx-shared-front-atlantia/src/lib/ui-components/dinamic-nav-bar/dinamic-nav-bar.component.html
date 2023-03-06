@@ -35,7 +35,11 @@
     </nav>
 </div>
 <nav class="nav-content" [ngClass]="{'expanded': navContentExpanded }">
-    <div class="logo-name"></div>
+    <div style="background-color: var(--nav-bar-primary-color-transparent);">
+      <a routerLink="home" class="logo-name">
+        <img [src]="mobileNavSrcPathLogo || srcPathLogo" alt="">
+      </a>
+    </div>
     <ngx-atlant-simple-nav-bar-content
       [navegationItems]="navItems"
       [numberHover]="currentHovered"

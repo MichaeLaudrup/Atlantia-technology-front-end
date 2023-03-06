@@ -10,6 +10,7 @@ export class DinamicNavBarComponent {
   @Input() navContentExpanded = false;
   @Input() navItems: navBarLink[] = []; 
   @Input() srcPathLogo: string = "assets/atlantia-logo.png";
+  @Input() mobileNavSrcPathLogo: ( string | undefined) = undefined; 
   @Input() linkOnClickLogo: string = "/home";
   currentHovered = -1;
 

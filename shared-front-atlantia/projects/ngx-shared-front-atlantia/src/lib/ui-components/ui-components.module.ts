@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SimpleComponentsModule } from './simple-components';
 import { VerticalInteractiveMenuComponent } from './vertical-interactive-menu/vertical-interactive-menu.component';
 import { MenuItemSizePipe } from '../common/pipes/menu-item-height.pipe';
+import { ImagePreloadResolver } from '../common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,11 @@ import { MenuItemSizePipe } from '../common/pipes/menu-item-height.pipe';
   exports: [
     DinamicNavBarComponent,
     DinamicWebPagesComponent,
-    VerticalInteractiveMenuComponent
+    VerticalInteractiveMenuComponent,
+    SimpleComponentsModule
+  ],
+  providers: [
+    ImagePreloadResolver
   ]
 })
 export class UiComponentsModule { }

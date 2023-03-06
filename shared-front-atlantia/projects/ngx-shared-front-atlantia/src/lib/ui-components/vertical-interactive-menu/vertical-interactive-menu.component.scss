@@ -14,7 +14,7 @@
   overflow: hidden;
   height: 100%;
   z-index: 1;
-  @include max-resolution(medium-mobile) {
+  @include max-resolution(mobile) {
     padding-bottom: var(--nav-bar-length);
     display: block;
   }
@@ -24,33 +24,67 @@
   height: 100%;
   position: relative;
 
-  @include min-resolution(medium-mobile) {
+  @include min-resolution(mobile) {
     display: flex;
   }
+}
 
-  .list-item {
-    height: 25px;
+.list-item {
+  height: 25px;
+  transition: all .3s ease-in-out;
+  position:relative;
+  overflow: hidden;
+
+  &__image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
     transition: all .3s ease-in-out;
-    position:relative;
-    overflow: hidden;
+  }
 
-    &__image {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-size: cover;
-      background-position: center center;
-      transition: all .3s ease-in-out;
-    }
+  &__veil {
+    width: 100%;
+    height: 100%;
+    transition: var(--quickly-transition);
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    bottom: 0;
+    right: 0;
 
-    a {
-      background-color: rgba(255, 255, 255, 0.886);
-      padding: .5rem 1rem; 
+    &:hover {
+      background-color: transparent;
     }
   }
+
+  &:nth-child(odd) { 
+    animation: from-left var(--pages-slides-duration) ease-in-out .3s;
+    animation-fill-mode: backwards;
+    @include min-resolution(mobile) {
+      animation: from-top var(--pages-slides-duration) ease-in-out;
+      animation-fill-mode: backwards;
+    }
+  }
+
+  &:nth-child(even) {
+    animation: from-right var(--pages-slides-duration) ease-in-out .3s;
+    animation-fill-mode: backwards;
+    @include min-resolution(mobile) {
+      animation: from-bottom var(--pages-slides-duration) ease-in-out;
+      animation-fill-mode: backwards;
+    }
+  }
+}
+
+.list-item__link {
+  background-color: rgba(255, 255, 255, 0.886);
+  padding: .5rem 1rem; 
 }
 
 .go-back-icon {

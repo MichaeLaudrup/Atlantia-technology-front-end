@@ -19,7 +19,9 @@
         (click)="item.status = LinkStatus.SELECTED; isSomeLinkSelected = true; currentItemIndexSelected = i"
       > 
         <div class="list-item__image" [style.backgroundImage]="(!item.imgUrl) ? '': 'url('+ item.imgUrl +')'">
-         
+          <div class="list-item__veil">
+            
+          </div>
           <a 
           class="list-item__link"
           >{{ item.name }}</a>
