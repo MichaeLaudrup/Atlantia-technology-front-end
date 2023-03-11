@@ -10,7 +10,8 @@ export class WindowResizeService {
 
   constructor() {
     this.resizeObserver = new ResizeObserver((entries: any) => {
-        const { width, height } = entries[0].contentRect;
+        const width = window.innerWidth; 
+        const height = window.innerHeight; 
         this.onResizeSubj$.next({width, height});
     });
     this.resizeObserver.observe(document.body);

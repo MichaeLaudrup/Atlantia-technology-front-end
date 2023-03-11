@@ -1,0 +1,16 @@
+@import 'C:/Users/maike/Desktop/GitZone/Atlantia-technology-front-end/shared-front-atlantia/projects/ngx-shared-front-atlantia/src/assets/styles/mixins/responsive-mixin.scss';
+
+:host {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-radius: var(--border-radius-1);
+  max-width: 425px;
+  overflow-y: scroll;
+  max-height: calc(100% - ( 2 * var(--nav-bar-length)));
+  @include min-resolution(mobile) {
+    max-width: 475px;
+    max-height: calc(100% - ( 1 * var(--nav-bar-length)));
+  }
+}

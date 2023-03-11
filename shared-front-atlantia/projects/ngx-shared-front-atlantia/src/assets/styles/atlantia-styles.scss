@@ -10,6 +10,9 @@
   
   --border-length-1: 5px;  
   --border-radius-1: 2px; 
+
+
+  --generic-border-radius: .25rem; 
   --regular-transition: all var(--normal-animation-duration) ease-in-out;
   --quickly-transition: all var(--quickly-animation-duraction) ease-in-out; 
   --font-color: black; 
@@ -43,6 +46,11 @@ a, a:active, a:visited {
 
 html, body {
   font-size: 14px;
+}
+
+.no-real-hidden{
+  opacity: 0;
+  pointer-events: none;
 }
 
 

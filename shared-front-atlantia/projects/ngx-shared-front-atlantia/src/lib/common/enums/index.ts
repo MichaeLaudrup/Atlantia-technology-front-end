@@ -1,1 +1,1 @@
-export * from './linkStatus'; 
+export * from './call-to-action.enum'; 

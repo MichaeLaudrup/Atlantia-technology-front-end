@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.cta-btn {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: var(--generic-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-3);
+  span {
+    color:white; 
+  }
+}
+
+.cta-btn.cta-danger-color {
+  background-color: rgb(250, 102, 102);
+}

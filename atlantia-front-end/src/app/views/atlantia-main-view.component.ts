@@ -52,8 +52,8 @@ export class AtlantiaMainViewComponent implements OnDestroy, OnInit{
     }));
 
     this.windowResizeServ.onResizeWindow$().subscribe(( { height, width} : WindowSize) => {
-      this.width = width; 
-      this.height = height;
+      this.width = window.innerWidth; 
+      this.height = window.innerHeight;
     }); 
   }
   

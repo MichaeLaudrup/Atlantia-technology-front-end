@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { VerticalMenuItem, WindowResizeService, WindowSize, linkStatus } from '../../common';
+import { Component, EventEmitter, HostBinding, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { VerticalMenuItem, WindowResizeService, WindowSize, callToActionType, fadeAnimation} from '../../common';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { mobile } from '../../common/consts';
@@ -10,51 +10,36 @@ import { mobile } from '../../common/consts';
 @Component({
   selector: 'ngx-atlant-vertical-interactive-menu',
   templateUrl: './vertical-interactive-menu.component.html',
-  styleUrls: ['./vertical-interactive-menu.component.scss']
+  styleUrls: ['./vertical-interactive-menu.component.scss'],
+  animations: [fadeAnimation]
 })
-export class VerticalInteractiveMenuComponent implements OnInit, OnDestroy {
-  LinkStatus = linkStatus; 
+export class VerticalInteractiveMenuComponent implements OnInit {
+  @HostBinding('style.--number-inputs') numInputsScss = -1;
   @Input() menuItems : VerticalMenuItem[] = [];
   @Input() fatherRoute : string = "";
-  @Output() menuClosed : EventEmitter<boolean> = new EventEmitter(); 
+  @Input() menuIsVisible: boolean = true; 
+  @Output() menuClosed : EventEmitter<boolean> = new EventEmitter();
 
-  isSomeLinkHovered: boolean = false; 
-  isSomeLinkSelected: boolean = false;
-  currentItemIndexSelected: number = -1; 
-  isMobile: boolean = false; 
-  imgs: any[] = []; 
-  private subscriptions : Subscription[] = [];
+  @Input() currentItemIndexSelected: number = -1; 
+
+  ctaTypes = callToActionType;  
   
-  constructor( private router: Router, private windowResizeService: WindowResizeService) {}
+  constructor( private router: Router) {}
   
   ngOnInit(): void {
-    this.subscriptions.push(this.windowResizeService.onResizeWindow$().subscribe( ({ width, height }: WindowSize) => {
-      this.isMobile = width < mobile; 
-    })); 
+    this.numInputsScss = this.menuItems.length;
+    if(this.router.url === this.fatherRoute) return; 
+    this.menuIsVisible = true; 
+    const firstChildRoute = this.router.url.slice(1).split('/')[1];
+    this.currentItemIndexSelected = this.menuItems.findIndex( ({routerLink}) => {
+      return routerLink.indexOf(firstChildRoute) !== -1; 
+    });
 
-    this.subscriptions.push(this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd && this.currentItemIndexSelected !== -1) {
-        if (event.url === this.fatherRoute) {
-          this.backToMenu(); 
-        }
-      }
-    }));
-  }
- 
-  ngOnDestroy(): void {
-    this.subscriptions.forEach(sub => sub.unsubscribe);
   }
 
-  itemHovered(item: VerticalMenuItem) {
-    if (this.isSomeLinkSelected) return; 
-    item.status = this.LinkStatus.HOVER;
-    this.isSomeLinkHovered = true; 
-  }
 
-  backToMenu() {
-    this.isSomeLinkSelected = false;
-    this.menuItems[this.currentItemIndexSelected].status = this.LinkStatus.FREE;
+  goBack() : void {
     this.currentItemIndexSelected = -1; 
+    this.router.navigate([this.fatherRoute]);
   }
-  
 }

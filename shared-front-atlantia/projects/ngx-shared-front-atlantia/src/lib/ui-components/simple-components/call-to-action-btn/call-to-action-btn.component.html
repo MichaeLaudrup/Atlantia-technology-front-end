@@ -1,0 +1,9 @@
+<button 
+  role="button"
+  class="cta-btn"
+  [ngClass]="{'cta-danger-color': callToActionType === ctaTypes.CLOSE}"
+>
+  <span class="material-symbols-outlined">
+    {{ callToActionType }}
+  </span>
+</button>

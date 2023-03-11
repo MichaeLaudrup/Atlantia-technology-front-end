@@ -4,30 +4,30 @@ import { DinamicNavBarComponent } from './dinamic-nav-bar/dinamic-nav-bar.compon
 import { SimpleNavBarContentComponent } from './dinamic-nav-bar/simple-nav-bar-content/simple-nav-bar-content.component';
 import { DinamicWebPagesComponent } from './dinamic-web-pages/dinamic-web-pages.component';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SimpleComponentsModule } from './simple-components';
 import { VerticalInteractiveMenuComponent } from './vertical-interactive-menu/vertical-interactive-menu.component';
-import { MenuItemSizePipe } from '../common/pipes/menu-item-height.pipe';
 import { ImagePreloadResolver } from '../common';
+import { InteractiveCarrouselComponent } from './interactive-carrousel/interactive-carrousel.component';
+
+const exportableComponents = [
+  DinamicNavBarComponent,
+  DinamicWebPagesComponent,
+  VerticalInteractiveMenuComponent,
+  InteractiveCarrouselComponent,
+]; 
 
 @NgModule({
   declarations: [
-    DinamicNavBarComponent,
+    ...exportableComponents,
     SimpleNavBarContentComponent,
-    DinamicWebPagesComponent,
-    VerticalInteractiveMenuComponent,
-    MenuItemSizePipe
   ],
   imports: [
     CommonModule,
     RouterModule,
-    BrowserAnimationsModule,
     SimpleComponentsModule
   ],
   exports: [
-    DinamicNavBarComponent,
-    DinamicWebPagesComponent,
-    VerticalInteractiveMenuComponent,
+    ...exportableComponents,
     SimpleComponentsModule
   ],
   providers: [

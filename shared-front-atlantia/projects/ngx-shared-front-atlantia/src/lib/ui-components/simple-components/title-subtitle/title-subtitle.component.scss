@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.title-box, .subtitle-box {
+  border: 2px solid;
+  border-image-slice: 1;
+  transform: skewX(-15deg);
+}
+
+.title-box {
+  border-left: 1.25rem solid var(--color-3);
+  border-image-source: linear-gradient(-90deg , transparent, var(--color-3));
+  border-right: none;
+  padding: .15rem .35rem;
+}
+
+.subtitle-box {
+  border-top: none;
+  border-left: none;
+  border-image-source: linear-gradient(90deg , transparent, var(--color-3));
+  border-right: 1.25rem solid var(--color-3);
+  padding: .05rem .3rem;
+  text-align: right;
+  transform: skewX(-15deg) translateX(-5px);
+  opacity: .75;
+}
+
+
+.title {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-family: inherit;
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: .9rem;
+}

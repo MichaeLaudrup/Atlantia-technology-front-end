@@ -7,12 +7,8 @@ import { AtlantiaHermesViewComponent } from './atlantia-hermes-view/atlantia-her
 import { AtlantiaAlejandriaViewComponent } from './atlantia-alejandria-view/atlantia-alejandria-view.component';
 import { AtlantiaRoutingModule } from './atlantia-routing.module';
 import { AtlantiaMainViewComponent } from './atlantia-main-view.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { AuthorViewComponent } from './author-view/author-view.component';
-import { ProfessionalExperienceComponent } from './author-view/professional-experience/professional-experience.component';
-import { WhereToGoComponent } from './author-view/where-to-go/where-to-go.component';
-import { AboutMeComponent } from './author-view/about-me/about-me.component';
-import { CoursesAndCertificatesComponent } from './author-view/courses-and-certificates/courses-and-certificates.component';
+import { AuthorModule } from './author-view/author.module';
+import { VerticalTestComponent } from './atlantia-alejandria-view/vertical-test/vertical-test.component';
 
 
 @NgModule({
@@ -21,16 +17,12 @@ import { CoursesAndCertificatesComponent } from './author-view/courses-and-certi
     AtlantiaHermesViewComponent,
     AtlantiaAlejandriaViewComponent,
     AtlantiaMainViewComponent,
-    AuthorViewComponent,
-    ProfessionalExperienceComponent,
-    WhereToGoComponent,
-    AboutMeComponent,
-    CoursesAndCertificatesComponent
+    VerticalTestComponent,
   ],
   imports: [
     CommonModule,
-    BrowserModule,
     AtlantiaRoutingModule,
+    AuthorModule,
     UiComponentsModule
   ],
   exports: [

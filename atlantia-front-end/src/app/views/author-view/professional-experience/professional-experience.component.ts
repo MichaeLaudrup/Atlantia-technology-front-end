@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-professional-experience',
+  selector: 'professional-experience',
   templateUrl: './professional-experience.component.html',
   styleUrls: ['./professional-experience.component.scss']
 })

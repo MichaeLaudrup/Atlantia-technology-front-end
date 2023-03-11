@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { fadeAnimation } from 'ngx-shared-front-atlantia';
 
 @Component({
   selector: 'app-atlantia-home-view',
   templateUrl: './atlantia-home-view.component.html',
-  styleUrls: ['./atlantia-home-view.component.scss']
+  styleUrls: ['./atlantia-home-view.component.scss'],
+  animations: [fadeAnimation]
 })
 export class AtlantiaHomeViewComponent{
   logoBright: boolean = false;

@@ -18,6 +18,11 @@
   animation-fill-mode: backwards;
 }
 
+.appear-from-top-after-slide {
+  animation: from-top var(--normal-animation-duration) ease-in-out var(--pages-slides-duration);
+  animation-fill-mode: backwards;
+}
+
 
 @keyframes from-left {
   0% {
@@ -42,20 +47,24 @@
 @keyframes from-top {
   0% {
     transform: translateY(-100%);
+    opacity: 0;
   }
 
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes from-bottom {
   0% {
     transform: translateY(100%);
+    opacity: 0;
   }
 
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 

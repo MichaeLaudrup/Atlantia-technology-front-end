@@ -1,8 +1,9 @@
 <ngx-atlant-vertical-interactive-menu
-    *ngIf="menuOpened"
     [menuItems]="menuData"
     [fatherRoute]="'/about-me'"
     (menuClosed)="menuOpened = false"
+    [currentItemIndexSelected]="currentIndexSelected"
+    [menuIsVisible]="menuOpened"
 >
     <router-outlet></router-outlet>
 </ngx-atlant-vertical-interactive-menu>

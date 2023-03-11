@@ -1,16 +1,16 @@
 <div class="d-content">
   <div class="welcome-container appear-after-slide">
     <div class="image-container">
-      <img *ngIf="!logoBright" class="logo-image" src="/assets/atlantia-logo-white.png" alt="">
-      <img *ngIf="logoBright" class="logo-image" src="/assets/atlantia-logo-white-ligth.png" alt="">
+      <img *ngIf="!logoBright" class="logo-image" src="/assets/atlantia-logo-white.png" alt="" [@fadeAnimation]>
+      <img *ngIf="logoBright" class="logo-image" src="/assets/atlantia-logo-white-ligth.png" alt="" [@fadeAnimation]>
+      <button
+        class='neon-btn'
+        (mouseenter)="logoBright = true"
+        (mouseleave)="logoBright = false"
+      >
+        Cuentame más
+      </button>
     </div>
-    <button
-      class='neon-btn'
-      (mouseenter)="logoBright = true"
-      (mouseleave)="logoBright = false"
-    >
-      Cuentame más
-    </button>
   </div>
 </div>
 
